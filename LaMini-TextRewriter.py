@@ -37,7 +37,7 @@ checkpoint = "./model/"  #it is actually LaMini-Flan-T5-248M
 LaMini = './model/'
 
 ######################################################################
-#     SUMMARIZATION FROM TEXT STRING WITH HUGGINGFACE PIPELINE       #
+#    REWRITE TEXT STRING WITH HUGGINGFACE PIPELINE       #
 ######################################################################
 def REWRITE(text,chunks, overlap):
     from langchain import HuggingFaceHub
@@ -52,7 +52,6 @@ def REWRITE(text,chunks, overlap):
     #It will add punctuation for for you
     # otherwise 500 chunks, 0 overlap
     from langchain.text_splitter import RecursiveCharacterTextSplitter
-    from tqdm.rich import trange, tqdm
     start = datetime.datetime.now() #not used now but useful
     #chunks = 500
     #overlap = 0
