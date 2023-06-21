@@ -27,9 +27,7 @@ import torch
 import datetime
 import os
 import requests
-# PUT HERE YOUR HUGGING FACE API TOKEN shuold start with hf_XXXXXXX...
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
-HUGGING_FACE_API_KEY = "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"
+
 
 #############################################################################
 #               SIMPLE TEXT2TEXT GENERATION INFERENCE
@@ -43,10 +41,6 @@ LaMini = './model/'
 ######################################################################
 def REWRITE(text,chunks, overlap):
     from langchain import HuggingFaceHub
-
-    #The 2 lines below only with API key
-    #repo_id = "MBZUAI/LaMini-Flan-T5-248M" # See https://huggingface.co/models?pipeline_tag=text-generation&sort=downloads for some other options
-    #llm = HuggingFaceHub(repo_id=repo_id, model_kwargs={"temperature":0, "max_length":512})
     
     llm = HuggingFacePipeline.from_model_id(model_id=LaMini,
                                         task = 'text2text-generation',
