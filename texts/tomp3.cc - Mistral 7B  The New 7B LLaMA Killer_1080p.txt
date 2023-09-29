@@ -1,0 +1,452 @@
+Okay.
+
+So Mistral AI is a company that sort
+of burst onto the scene late may and
+
+early June when they raised around
+$113 million for their seed round.
+
+And at the time people were quite vocal
+about that how could an unknown company
+
+suddenly raise so much money and not only
+that, it had a lot of famous investors,
+
+people like Eric Schmidt Lightspeed the
+VCs who are behind the mobile app snap
+
+and a variety of other VCs as well.
+
+And what it turned out at the time was
+that, basically, this was a group of
+
+researchers  from DeepMind from Meta.
+
+and they were getting together to
+basically build a new AI company.
+
+And the reason for the large
+raise was mostly to go towards
+
+buying GPUs apparently.
+
+Well, jump ahead a few months we've
+now got the first model that they've
+
+actually released and this is Mistral 7B.
+
+So it's a small model compared to others.
+
+But it's very much
+punching above its weight.
+
+So overall to sum up the
+model it's a 7 billion model.
+
+There are two versions of this.
+
+there is one that is basically just
+the base model and there's one that
+
+has an instructor, fine tune model.
+
+If we come down and have a look
+at this, we can see that the
+
+model supports English and code.
+
+And goes out to an 8K
+context length window here.
+
+the license is, Apache 2.
+
+And the model's been optimized for,
+low latency, text summarization, text
+
+completion and code completion here.
+
+They've released a blog post
+as well as actually releasing
+
+the model on hugging face.
+
+So before we jump in and have a
+look at the model itself, just
+
+quickly looking at their blog posts.
+
+you can see Mistral 7b in short,
+they're claiming that this,
+
+outperforms, LLaMA-2 13 billion.
+
+So a model that's almost twice
+as big as the 7 billion it
+
+outperforms LLaMA-1 34 billion.
+
+So you can see here, the performance
+is definitely a lot better than
+
+the LLaMA-2 models for this.
+
+Now It does seem that the model
+in many ways is similar to the
+
+LLaMA-2 models with the amount of
+tokens and the sizing, et cetera.
+
+But it does seem that they've found
+a way to squeeze out a lot more
+
+performance for that particular size.
+
+So in the blog posts, they mentioned that
+they're using a group query attention.
+
+They using sliding window attention.
+
+and they also publish some stats
+that we can have a look at here.
+
+So you can see here, they've basically
+got a graph of the performance in detail
+
+For the different benchmarks, comparing
+the Mistral 7B to the LLaMA 7B the
+
+LLaMA-2 13B and also the LLaMA-1 34B here.
+
+So based on these graphs, we can see that
+it's doing very well with the MMLU scores.
+
+apparently the model can do both English
+and code and perhaps the ability to do
+
+code has helped it very much with the
+AGI eval scores where it seems to be
+
+scoring much higher then the two LLaMA-2
+models and the LLaMA-1 34b model there.
+
+Another metric that I think is really
+interesting here is how will it does on
+
+the GSM 8K benchmark, which I've talked
+about in some of the other videos here.
+
+And you can see that here, it's
+getting a 52% far above  the
+
+LLaMA-2 7B and a LLaMA-2 13B here.
+
+And also far above the fine
+tune CodeLLaMA, 7B here, which
+
+is very interesting to look at.
+
+So in here, they've got a little bit about
+the sliding window attention and how that
+
+basically attends to, the 4,000 tokens.
+
+We can also see that they've actually
+released a, chat model for this
+
+or an instructor model for this.
+
+So they're calling this the
+Mistral 7B instructor model.
+
+And they show that not only is this
+beating all the other 7B models that it's
+
+actually doing better than a lot of the
+13B models with only perhaps WizardLM
+
+13B B and a Vicuna 13B beating it here.
+
+And one of the good things with this
+is it seems that Mistral is definitely
+
+committed to, open sourcing models.
+
+Perhaps we're gonna see better and
+bigger models from them in the future.
+
+So it is very nice that up until
+now, we've really had to rely
+
+on Meta releasing some of these
+foundation models with good licenses.
+
+that are actually very high quality.
+
+It does seem now that there's another
+player on the scene, which, opens up
+
+a whole bunch of new opportunities
+With other kinds of models as well.
+
+So let's jump into the code
+and have a look at how the
+
+Mistral 7B actually performs.
+
+Okay, so I'm going to go quickly
+through the Mistral 7B instruct here.
+
+one of the key things you want
+to make sure is that you install
+
+hugging face transformers from git
+
+hub to make sure that you've
+got the latest version there.
+
+And once you've got that you can
+bring in the model and the tokenized.
+
+just like, before.
+
+And we can see if we look on the
+hugging face hub here, we can see
+
+their instructions for doing it.
+
+including the instruction.
+
+format that they're doing.
+
+so that's going to be key in here as well.
+
+Okay.
+
+So the prompt format that they're
+using basically is you wrap
+
+things, in this instruction tag.
+
+if there is an assistance response,
+you will then basically get a
+
+end of response tag back or an
+End of text tag back like that.
+
+so I've just put together a very simple
+little generate a function that basically
+
+wraps our instructions in this way.
+
+Takes those puts them through a tokenizer.
+
+Encodes them.
+
+And puts them on here.
+
+So, I kind of reused the Phi 1.5.
+
+Notebook that I had recently.
+
+So there were a number of things
+in that that were code gen.
+
+So I thought I'd start off with that.
+
+And it seems like, okay, it's doing.
+
+so interesting code Gen, in
+here for this where, Does
+
+generate functions, pretty well.
+
+for checking prime numbers, et cetera.
+
+Though running through them at
+times, some are hits some amiss.
+
+and that's generally how I found the,
+responses overall is that some of them
+
+are really good, but then if you rerun
+it, you can get a very so-so response.
+
+quite often as well.
+
+I so you can hear here, I've asked it,
+some of the things from other Phi, 1.5.
+
+Write.
+
+A detailed analogy between
+mathematics and music.
+
+and it does quite nicely at
+that it's running out of tokens.
+
+at the end.
+
+but it's definitely snappy performance.
+
+So I'm running this on an A100.
+
+Because they recommended
+that you use at least 24.
+
+GB of Ram.
+
+but I think it would actually
+fit probably on the T4 as well.
+
+And certainly it will fit on the
+T4 as a eight bit or four bit.
+
+Here.
+
+Okay.
+
+So some standard questions that I ask.
+
+Normally like the llama Vicuna alpaca.
+
+it does quite nicely with this
+at times, but then also certain
+
+generations didn't do as well as this.
+
+the writing an email to Sam Altman.
+
+I thought this one generally
+came out pretty good.
+
+you want to make sure you
+give it some extra tokens.
+
+it seems to want to actually use
+those tokens for something like this.
+
+as we're going through now, Questions,
+like the, what is the capital of England?
+
+I found it to be a little bit hit
+and miss sometimes it would just
+
+give you a very succinct answer.
+
+Sometimes it would give
+a very long answer.
+
+Questions like, can Geoffrey Hinton have
+a conversation with George Washington.
+
+give rationale before answering.
+
+this kind of question, it actually seems
+to handle, quite well and actually eats
+
+probably better than a lot of the other,
+seven B models are out there also for.
+
+making up stories.
+
+This seemed to be quite good as well.
+
+Chat, it seems to do.
+
+quite good at completing chats.
+
+what I did find it to be lacking.
+
+is in the GSM eight K stuff.
+
+So even just the simple
+question of the cafeteria.
+
+and my guess, is that okay?
+
+I think on the stats, they were
+saying that this model is getting 52%.
+
+Right.
+
+So certainly the ones I've
+given it seems to get wrong.
+
+Well, they did get this
+one right at times.
+
+so I found that sometimes he got it right.
+
+Sometimes he got it wrong.
+
+all this.
+
+The times I ran this one that got it
+wrong, even though it works out that,
+
+you've got three plus six, which is great.
+
+But then three plus six doesn't equal 29.
+
+so it's sort of off base on some of those
+
+Overall, I'd say the model is
+certainly worth giving a shot
+
+and having a play with it.
+
+I suspect that we may get, some
+really good, fine tunes of this model.
+
+once people sort of work out
+how to tune it and stuff.
+
+I also found that kind of interesting that
+it's not using a system prompt at all.
+
+It's just basically using this
+instruction prompt that goes in here.
+
+So originally I had my
+code for system prompt.
+
+I've taken that out.
+
+as we've gone through, but you
+could play with putting a system
+
+prompt at the start and see, okay.
+
+Does that influence it in any way?
+
+Anyway, overall, have a play
+with the model yourself.
+
+See what you think of it.
+
+My guess is that the 4-bit versions
+of this are going to be very small.
+
+and be able to easily run on, phones
+and other devices, Which makes it a
+
+very appealing model for a variety of
+different tasks for this kind of thing.
+
+Anyway as always, if you've got anything.
+
+to say or any questions, please
+put them in the comments below.
+
+If you're interested in videos
+about large language models, I've
+
+got a bunch of these coming up.
+
+so please click like and subscribe.
+
+I will talk to you in the next video.
+
+Bye for now.
+
+

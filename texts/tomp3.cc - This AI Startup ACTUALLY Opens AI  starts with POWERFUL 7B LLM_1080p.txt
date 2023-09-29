@@ -1,0 +1,373 @@
+we have a brand new 7 billion parameter
+
+model from mistal Ai and that is doing
+
+quite a bit good on a lot of benchmarks
+
+if you do not know Mr AI there is a very
+
+good chance that you might have read
+
+this News 4 week old AI startup France
+
+from France Mr AI raises $113 million
+
+despite no product and little stuff this
+
+is a news that came in June 22 20
+
+2023 at the time they did not have a
+
+product but today or probably yesterday
+
+what they did is they actually released
+
+the model on torrent so they actually
+
+shared a magnet link and people were
+
+wondering what was a magnet link and it
+
+turns out that it is a model in fact
+
+they have released two different models
+
+one is the base mral 7 billion parameter
+
+model
+
+v.1 and the second one is a mral 7
+
+billion parameter model the instruct
+
+model
+
+v.1 so these two models come with a very
+
+nice very um ambitious announcement I
+
+would like to go into the announcement
+
+but before that I would like to also
+
+point out that this article says that
+
+they do not have or they have little
+
+stuff but if you go to the model release
+
+page you can actually see a lot of good
+
+stuffs like at least like I know a
+
+couple of names who uh who are quite
+
+popular on Twitter at least in the llm
+
+space so it seems like they've got good
+
+stuff and also their model
+
+architecture prioritizes having a faster
+
+inference like they have got new
+
+techniques like grouped query attention
+
+sliding window attention and BP
+
+tokenizer that they've used for um for
+
+faster inference keeping all this aside
+
+if you go to their launch page what it
+
+says says bringing open AI models to the
+
+frontier I don't know if this is pun
+
+intended or it is just like they just
+
+wanted to say that bringing open AI
+
+models to the frontier it's with the
+
+space definitely of course and it's
+
+lower case but it's open a anyways why
+
+are we building Mr Ai and it goes into
+
+the details about how the world has seen
+
+all these open-source tools in the past
+
+like webkit like Linux operating system
+
+like kubernetes that basically you know
+
+all these engines run the internet and
+
+they have gone into into the details
+
+about what is happening in the current
+
+world of AI and why generative AI needs
+
+open models and as a first step they're
+
+releasing the first model which is mral
+
+7 billion parameter model and according
+
+to them it outperforms all currently
+
+available open models including the
+
+Llama 27 billion parameter models in
+
+fact they're claiming that in some of
+
+the benchmarks it beats even the 13
+
+billion parameter model on coding like
+
+English and coding benchmarks before we
+
+take their actual result as the face
+
+value so the one of the prolific fine
+
+cers that I respect a lot is technium so
+
+technium managed to run some of the
+
+benchmarks so on big bench Mr beat 7
+
+billion parameter Lama 2 but does not
+
+beat 13 billion parameter Lama 2 on AG
+
+evil it beats Mr 7 billion beat beat the
+
+Lama to 7 billion and on truthful QA it
+
+actually beats the 7 billion Lama 2 and
+
+13 billion Lama to so even though it is
+
+not in every single Benchmark I kind of
+
+respect what the company has said and I
+
+kind of see that you know they have done
+
+something quite good in this model that
+
+is the reason why it is performing while
+
+people are still trying to figure out
+
+why it is doing good so there are rumors
+
+that maybe they have used like a lot of
+
+data no details about what is the
+
+training data that they have used and
+
+how far that has helped them so there is
+
+no details around how they have beaten
+
+all these things and also there is no
+
+details around how they're going to
+
+justify this money I know this is quite
+
+an ambitious thing to say like you know
+
+generative AI needs open models but also
+
+a company that raised funding needs to
+
+make money I mean otherwise nobody will
+
+give you money in the first place um
+
+that's why I don't get funding for a
+
+YouTube channel so on the same line Mr 7
+
+billion parameter models performance
+
+demonstrates what small models can do
+
+with enough conviction I think this is a
+
+statement that I do not take lightly if
+
+you have seen the news which I did not
+
+cover maybe I'll cover it in the AI news
+
+in the
+
+week Microsoft is trying to actually
+
+build smaller models so Microsoft is in
+
+fact focusing on building smaller models
+
+that can run easily on either single GPU
+
+or on edge devices so if you see all the
+
+efforts that have gone into quantization
+
+or GG UF model the Lama CPP everything
+
+in fact Mark zabak validated this
+
+acknowledged this but all these things
+
+were like okay what do we do with small
+
+models I think a lot of people take this
+
+as a joke like when we publish videos
+
+people are like hey you just published a
+
+7 billion parameter tutorial why do you
+
+want another one I think the world needs
+
+lot of smaller models that's what I
+
+believe strongly let me know your
+
+thoughts in the comment section so mral
+
+AI has tracked the small model
+
+performance or at least they have
+
+tracked any model that has got 60% or
+
+above an mm luu and in the last 2 years
+
+they're saying from 280 billion goer
+
+model then it went to 70 billion
+
+chinchila model and then now we have got
+
+the 34 billion parameter Lama to model
+
+and very new the brand new mral 7
+
+billion parameter model they're saying
+
+that they scored more than 60% on MML
+
+it's quite a big claim and again like we
+
+know at this point that I'm not a big
+
+fan of benchmarks to be honest like we
+
+would definitely need to try check the
+
+model try the model and then see it like
+
+I would definitely want to do it not in
+
+this video on a different video but the
+
+greatest thing the greatest thing about
+
+all of this is Mr 7 billion parameter
+
+model is released with apachi 2.0
+
+license and making it usable without any
+
+restriction
+
+anywhere you don't have any kind of
+
+restrictions to use this model and they
+
+have also opened their GitHub repository
+
+for you to go use their code learn some
+
+of the techniques like for example they
+
+go into the details about what is the
+
+sliding window attention that they are
+
+using how is it different from vanila
+
+attention and how it is going to help
+
+you in speeding up the inference process
+
+so they go into this detail and if you
+
+were to use this model one you can go
+
+here into their repository and and then
+
+use anything that you want or the
+
+easiest option is like if you are a fan
+
+of hugging face Transformers you can go
+
+here and then use it and like I said
+
+they' have released two models one is
+
+the instruct model which is the
+
+instruction ftuned model and then the
+
+second one is the base model the 7
+
+billion parameter model which you can go
+
+ahead and then read about it and
+
+according to them Mr 7 billion
+
+v.1 outperforms Lama to 13 billion on
+
+all benchmarks and we just saw some of
+
+the examples from technium where it does
+
+not do it but either way I'm really
+
+looking forward to see how this model
+
+performs especially as a matter of fact
+
+that the company has raised 113 billion
+
+13 million I said billion 13 million
+
+dollar while they have raised $13
+
+million they are also going for open AI
+
+models so they want to bring open AI
+
+models to the frontier F into de see you
+
+another video happy br
+
+
